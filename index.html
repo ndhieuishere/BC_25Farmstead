@@ -42,7 +42,8 @@
     <link rel="stylesheet" href="./libs/splidejs/dist/css/splide.min.css" />
     <!-- smartphoto js -->
     <link rel="stylesheet" href="./libs/smartphotojs/css/smartphoto.min.css" />
-
+    <!-- backtotopjs -->
+    <link rel="stylesheet" href="./libs/backtotopjs/assets/css/style.css" />
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -73,28 +74,37 @@
   </head>
   <body>
     <!-- header -->
-    <header id="navbar">
+    <header id="navbar" >
       <!-- Grey with black text -->
       <div class="container">
-        <nav class="navbar navbar-expand-lg stroke navbar-dark sticky-top menu">
+        <nav class="navbar navbar-expand-lg stroke navbar-dark sticky-top menu movedownjs">
           <!-- Brand -->
-          <a class="navbar-brand logo" href="#"
+          <a class="navbar-brand logo " href="#"
             >Farmstead<i class="fas fa-leaf"></i
           ></a>
 
           <!-- Links -->
           <ul class="navbar-nav ml-auto">
-            <form class="form-inline" action="/action_page.php">
-              <input class="form-control mr-sm-2 search-button" type="text" />
+            <form
+              class="form-inline position-relative"
+              action="/action_page.php"
+            >
+              <input class="form-control search-button" id="search-button" type="text" />
+              <i
+                class="fas fa-search search-icon toggle-color-2 position-absolute"
+              ></i>
             </form>
             <li class="nav-item">
               <a class="nav-link theme-button" href="#"
-                ><i class="fas fa-sun theme-light toggle-color"></i>
-                <i class="fas fa-moon theme-dark toggle-color-2"></i>
+                ><img src="./img/sun.png" alt="" id="icon"></i>
               </a>
             </li>
             <!-- Dropdown -->
-            <li class="nav-item dropdown">
+            <li
+              class="nav-item dropdown"
+              id="dropdown_click"
+              onclick="dropdown()"
+            >
               <a
                 class="nav-link dropdown-select"
                 href="#"
@@ -103,7 +113,7 @@
               >
                 <i class="fas fa-bars"></i>
               </a>
-              <div class="dropdown-menu">
+              <div class="dropdown-menu dropdown-content" id="myDropdown">
                 <a class="dropdown-item active" href="#">home</a>
                 <a class="dropdown-item" href="#">about</a>
                 <a class="dropdown-item" href="#">Services</a>
@@ -134,7 +144,7 @@
                   Sed ut perspiciatis unde omnis iste natus error sit voluptatem
                   accusantium doloremque laudantium.
                 </p>
-                <a href="#">Learn More</a>
+                <a href="#" class="mt-sm-5">Learn More</a>
               </div>
             </div>
           </div>
@@ -339,7 +349,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-5 projects-right">
+          <div class="col-lg-5 projects-right">
             <img src="./img/services1.jpg" alt="" />
             <div class="info-box">
               <h1>36+</h1>
@@ -434,7 +444,7 @@
     <section id="gallery">
       <div class="container">
         <div class="row">
-          <div class="col-lg-3 text-box">
+          <div class="col-lg-3 col-6 text-box">
             <div class="gallery-content">
               <h1>Gallery</h1>
               <h2>Our Products</h2>
@@ -442,31 +452,31 @@
               <a href="#">DISCOVER MORE</a>
             </div>
           </div>
-          <div class="col-lg-3 img-box box-1 js-smartPhoto">
+          <div class="col-lg-3 col-6 img-box box-1 js-smartPhoto">
             <img src="./img/g1.jpg" alt="" />
             <div class="gallery-text">Fresh Carrots</div>
           </div>
-          <div class="col-lg-3 img-box box-2 js-smartPhoto">
+          <div class="col-lg-3 col-6 img-box box-2 js-smartPhoto">
             <img src="./img/g2.jpg" alt="" />
             <div class="gallery-text">Strawberry</div>
           </div>
-          <div class="col-lg-3 img-box box-3 js-smartPhoto">
+          <div class="col-lg-3 col-6 img-box box-3 js-smartPhoto">
             <img src="./img/g3.jpg" alt="" />
             <div class="gallery-text">Our Farm</div>
           </div>
-          <div class="col-lg-3 img-box box-4 js-smartPhoto">
+          <div class="col-lg-3 col-6 img-box box-4 js-smartPhoto">
             <img src="./img/g4.jpg" alt="" />
             <div class="gallery-text">Fresh Apples</div>
           </div>
-          <div class="col-lg-3 img-box box-5 js-smartPhoto">
+          <div class="col-lg-3 col-6 img-box box-5 js-smartPhoto">
             <img src="./img/g5.jpg" alt="" />
             <div class="gallery-text">Awesome Fields</div>
           </div>
-          <div class="col-lg-3 img-box box-6 js-smartPhoto">
+          <div class="col-lg-3 col-6 img-box box-6 js-smartPhoto">
             <img src="./img/g6.jpg" alt="" />
             <div class="gallery-text">Fresh Grapes</div>
           </div>
-          <div class="col-lg-3 img-box box-7 js-smartPhoto">
+          <div class="col-lg-3 col-6 img-box box-7 js-smartPhoto">
             <img src="./img/g7.jpg" alt="" />
             <div class="gallery-text">Hot Pepper</div>
           </div>
@@ -580,7 +590,7 @@
     <footer>
       <div class="container">
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-lg-4 order-1 order-lg-3">
             <div class="footer-contact">
               <h1>FIND US</h1>
               <div class="info">
@@ -593,7 +603,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-4 order-3 order-lg-3">
             <div class="footer-copyright">
               <a class="logo" href="#">Farmstead<i class="fas fa-leaf"></i></a>
               <p>
@@ -606,7 +616,7 @@
               </p>
             </div>
           </div>
-          <div class="col-lg-4">
+          <div class="col-lg-4 order-2 order-lg-3">
             <div class="footer-mail">
               <h1>NEWSLETTER</h1>
               <p>
@@ -648,6 +658,10 @@
         </div>
       </div>
     </footer>
+    <div class="back-to-top">
+      <img src="./img/imgup.png" alt="">
+  </div>
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
@@ -670,22 +684,22 @@
     <!-- owl carousel -->
     <script src="./libs/owl-carousel//dist/owl.carousel.min.js"></script>
     <script>
-     $('.owl-carousel').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:false,
-    responsive:{
-        0:{
-            items:1
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: false,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 1,
+          },
+          1000: {
+            items: 1,
+          },
         },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    }
-})
+      });
     </script>
     <!-- splidejs -->
     <script src="./libs/splidejs/dist/js/splide.min.js"></script>
@@ -711,5 +725,7 @@
         $(".js-smartPhoto").SmartPhoto();
       });
     </script> -->
+    <!-- js -->
+    <script src="./main.js"></script>
   </body>
 </html>
